@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Bold.otf">
+            <string>SFProDisplay-Bold</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+        <array key="SF-Pro-Display-Semibold.otf">
+            <string>SFProDisplay-Semibold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are all the java keywords?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9I-lb-a4m">
+                                <rect key="frame" x="16" y="88" width="382" height="81.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="NfL-gP-deK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert Word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vn5-js-qBP" customClass="RoundedTextField" customModule="Quiz">
+                                <rect key="frame" x="16" y="185.5" width="382" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="7lb-5q-scr"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="4qk-La-JaK"/>
+                                </connections>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nL4-pg-shY">
+                                <rect key="frame" x="0.0" y="249.5" width="414" height="475.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GuessTableViewCell" id="t8O-hB-uva" customClass="GuessTableViewCell" customModule="Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t8O-hB-uva" id="7iY-m6-nVB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otp-mq-SJe">
+                                                    <rect key="frame" x="20" y="11.5" width="385" height="21"/>
+                                                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="otp-mq-SJe" firstAttribute="leading" secondItem="7iY-m6-nVB" secondAttribute="leading" constant="20" id="Qcn-up-rm9"/>
+                                                <constraint firstItem="otp-mq-SJe" firstAttribute="centerY" secondItem="7iY-m6-nVB" secondAttribute="centerY" id="WiH-iT-q7c"/>
+                                                <constraint firstAttribute="trailing" secondItem="otp-mq-SJe" secondAttribute="trailing" constant="9" id="vTd-Qk-b4x"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="otp-mq-SJe" id="evT-VN-694"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="H2u-0v-aY0"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVE-hI-RNs">
+                                <rect key="frame" x="0.0" y="725" width="414" height="171"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvC-rF-EN0">
+                                        <rect key="frame" x="302" y="16" width="96" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="byH-se-1UP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXa-FW-Gls" customClass="RoundedButton" customModule="Quiz">
+                                        <rect key="frame" x="16" y="73" width="382" height="48"/>
+                                        <color key="backgroundColor" red="1" green="0.51372549019607838" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="NDZ-sb-Prt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Semibold" family="SF Pro Display" pointSize="17"/>
+                                        <state key="normal" title="Reset">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onActionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0C-b5-UnP"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYR-DD-kpY">
+                                        <rect key="frame" x="16" y="16" width="98" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="m6B-pI-79c"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFProDisplay-Bold" family="SF Pro Display" pointSize="34"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="oYR-DD-kpY" firstAttribute="leading" secondItem="JVE-hI-RNs" secondAttribute="leading" constant="16" id="FNx-gE-C75"/>
+                                    <constraint firstItem="jvC-rF-EN0" firstAttribute="top" secondItem="JVE-hI-RNs" secondAttribute="top" constant="16" id="FRD-AC-txL"/>
+                                    <constraint firstAttribute="bottom" secondItem="qXa-FW-Gls" secondAttribute="bottom" constant="50" id="QX4-lQ-5n6"/>
+                                    <constraint firstItem="oYR-DD-kpY" firstAttribute="top" secondItem="JVE-hI-RNs" secondAttribute="top" constant="16" id="a1M-6m-Y3t"/>
+                                    <constraint firstItem="qXa-FW-Gls" firstAttribute="top" secondItem="oYR-DD-kpY" secondAttribute="bottom" constant="16" id="amN-E2-Hr1"/>
+                                    <constraint firstItem="qXa-FW-Gls" firstAttribute="leading" secondItem="JVE-hI-RNs" secondAttribute="leading" constant="16" id="fL8-yQ-3Vr"/>
+                                    <constraint firstAttribute="trailing" secondItem="jvC-rF-EN0" secondAttribute="trailing" constant="16" id="p7S-xL-Q6L"/>
+                                    <constraint firstItem="jvC-rF-EN0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="oYR-DD-kpY" secondAttribute="trailing" constant="16" id="sPe-8E-pXT"/>
+                                    <constraint firstAttribute="trailing" secondItem="qXa-FW-Gls" secondAttribute="trailing" constant="16" id="w6b-Ti-bI2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="JVE-hI-RNs" firstAttribute="top" secondItem="nL4-pg-shY" secondAttribute="bottom" id="0ec-sR-kyO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e9I-lb-a4m" secondAttribute="trailing" constant="16" id="2bn-yK-bld"/>
+                            <constraint firstItem="e9I-lb-a4m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3BM-vC-71w"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vn5-js-qBP" secondAttribute="trailing" constant="16" id="8tq-T3-Tgb"/>
+                            <constraint firstItem="nL4-pg-shY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Df-Ur-uPv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nL4-pg-shY" secondAttribute="trailing" id="Fxg-8A-imA"/>
+                            <constraint firstItem="nL4-pg-shY" firstAttribute="top" secondItem="vn5-js-qBP" secondAttribute="bottom" constant="16" id="NaB-Qo-jxG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JVE-hI-RNs" secondAttribute="trailing" id="ZIs-EL-eZR"/>
+                            <constraint firstItem="vn5-js-qBP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bJX-8m-De4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JVE-hI-RNs" secondAttribute="bottom" constant="-34" id="ggA-QY-yAC"/>
+                            <constraint firstItem="JVE-hI-RNs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lbK-XB-Erb"/>
+                            <constraint firstItem="vn5-js-qBP" firstAttribute="top" secondItem="e9I-lb-a4m" secondAttribute="bottom" constant="16" id="wH0-qN-LvZ"/>
+                            <constraint firstItem="e9I-lb-a4m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="wXf-4D-Hxs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="qXa-FW-Gls" id="s0S-bd-9Fe"/>
+                        <outlet property="guessTextField" destination="vn5-js-qBP" id="D6h-d2-6Qb"/>
+                        <outlet property="guessesCountLabel" destination="oYR-DD-kpY" id="wXg-NA-CLR"/>
+                        <outlet property="guessesTableView" destination="nL4-pg-shY" id="wgW-9Z-Wte"/>
+                        <outlet property="quizTimerLabel" destination="jvC-rF-EN0" id="2vM-tp-5C3"/>
+                        <outlet property="quizTitleLabel" destination="e9I-lb-a4m" id="UG0-1c-0x4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.681159420289859" y="18.75"/>
+        </scene>
+    </scenes>
+</document>
