@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class QuizInfo : JSONSerializable {
    
-    let durationInMinutes = 1
+    let durationInMinutes = 5
     
     private(set) var question: String!
     private(set) var answers:[String]!
