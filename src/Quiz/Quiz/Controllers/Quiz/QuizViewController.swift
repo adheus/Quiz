@@ -9,10 +9,7 @@
 import UIKit
 
 class QuizViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate, ErrorViewDelegate {
-    
-    let kGuessesCounterFormat = "%02d/%02d"
-    let kTimerFormat = "%02d:%02d"
-    
+
     @IBOutlet var quizTitleLabel:UILabel!
     @IBOutlet var guessTextField:UITextField!
     @IBOutlet var guessesTableView:UITableView!
