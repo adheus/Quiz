@@ -21,16 +21,16 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Main View Controller-->
+        <!--Quiz View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuizViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are all the java keywords?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9I-lb-a4m">
-                                <rect key="frame" x="16" y="88" width="382" height="81.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e9I-lb-a4m">
+                                <rect key="frame" x="16" y="88" width="382" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="NfL-gP-deK"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Insert Word" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vn5-js-qBP" customClass="RoundedTextField" customModule="Quiz">
-                                <rect key="frame" x="16" y="185.5" width="382" height="48"/>
+                                <rect key="frame" x="16" y="104" width="382" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="7lb-5q-scr"/>
                                 </constraints>
@@ -51,7 +51,7 @@
                                 </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nL4-pg-shY">
-                                <rect key="frame" x="0.0" y="249.5" width="414" height="475.5"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="557"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GuessTableViewCell" id="t8O-hB-uva" customClass="GuessTableViewCell" customModule="Quiz" customModuleProvider="target">
@@ -86,8 +86,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JVE-hI-RNs">
                                 <rect key="frame" x="0.0" y="725" width="414" height="171"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:23" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvC-rF-EN0">
-                                        <rect key="frame" x="302" y="16" width="96" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvC-rF-EN0">
+                                        <rect key="frame" x="300.5" y="16" width="97.5" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="byH-se-1UP"/>
                                         </constraints>
@@ -109,8 +109,8 @@
                                             <action selector="onActionPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0C-b5-UnP"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07/50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYR-DD-kpY">
-                                        <rect key="frame" x="16" y="16" width="98" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00/50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYR-DD-kpY">
+                                        <rect key="frame" x="16" y="16" width="101.5" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="m6B-pI-79c"/>
                                         </constraints>
@@ -132,6 +132,28 @@
                                     <constraint firstAttribute="trailing" secondItem="qXa-FW-Gls" secondAttribute="trailing" constant="16" id="w6b-Ti-bI2"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a6h-OY-042">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zjt-xx-518" customClass="LoadingView" customModule="Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="122" y="378" width="170" height="140"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="XXi-Z6-wUt"/>
+                                            <constraint firstAttribute="width" constant="170" id="ZaN-sm-mXe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.58904109589041098" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Zjt-xx-518" firstAttribute="centerX" secondItem="a6h-OY-042" secondAttribute="centerX" id="fT2-ZI-Xsh"/>
+                                    <constraint firstItem="Zjt-xx-518" firstAttribute="centerY" secondItem="a6h-OY-042" secondAttribute="centerY" id="irk-WG-Q6j"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7JO-wj-6pE" customClass="ErrorView" customModule="Quiz" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -142,20 +164,33 @@
                             <constraint firstItem="nL4-pg-shY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9Df-Ur-uPv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nL4-pg-shY" secondAttribute="trailing" id="Fxg-8A-imA"/>
                             <constraint firstItem="nL4-pg-shY" firstAttribute="top" secondItem="vn5-js-qBP" secondAttribute="bottom" constant="16" id="NaB-Qo-jxG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="a6h-OY-042" secondAttribute="top" constant="44" id="Sj9-PA-JTL"/>
+                            <constraint firstItem="7JO-wj-6pE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-44" id="XYO-LU-vHr"/>
+                            <constraint firstItem="7JO-wj-6pE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XdH-MW-zqO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JVE-hI-RNs" secondAttribute="trailing" id="ZIs-EL-eZR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a6h-OY-042" secondAttribute="trailing" id="at2-LA-gBw"/>
                             <constraint firstItem="vn5-js-qBP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bJX-8m-De4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7JO-wj-6pE" secondAttribute="trailing" id="fmr-Jl-fT8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="JVE-hI-RNs" secondAttribute="bottom" constant="-34" id="ggA-QY-yAC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a6h-OY-042" secondAttribute="bottom" constant="-34" id="jsv-WJ-CIH"/>
                             <constraint firstItem="JVE-hI-RNs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lbK-XB-Erb"/>
+                            <constraint firstItem="a6h-OY-042" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s6D-H4-H84"/>
                             <constraint firstItem="vn5-js-qBP" firstAttribute="top" secondItem="e9I-lb-a4m" secondAttribute="bottom" constant="16" id="wH0-qN-LvZ"/>
                             <constraint firstItem="e9I-lb-a4m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="wXf-4D-Hxs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7JO-wj-6pE" secondAttribute="bottom" constant="-34" id="yie-j8-vqW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="actionButton" destination="qXa-FW-Gls" id="s0S-bd-9Fe"/>
+                        <outlet property="errorView" destination="7JO-wj-6pE" id="O1e-IH-2KC"/>
+                        <outlet property="footerBottomConstraint" destination="ggA-QY-yAC" id="dUw-9x-kmU"/>
+                        <outlet property="footerView" destination="JVE-hI-RNs" id="tkA-W2-yBi"/>
                         <outlet property="guessTextField" destination="vn5-js-qBP" id="D6h-d2-6Qb"/>
                         <outlet property="guessesCountLabel" destination="oYR-DD-kpY" id="wXg-NA-CLR"/>
                         <outlet property="guessesTableView" destination="nL4-pg-shY" id="wgW-9Z-Wte"/>
+                        <outlet property="loadingView" destination="Zjt-xx-518" id="Mcc-oi-hGq"/>
+                        <outlet property="loadingViewContainer" destination="a6h-OY-042" id="gtA-rg-eru"/>
                         <outlet property="quizTimerLabel" destination="jvC-rF-EN0" id="2vM-tp-5C3"/>
                         <outlet property="quizTitleLabel" destination="e9I-lb-a4m" id="UG0-1c-0x4"/>
                     </connections>

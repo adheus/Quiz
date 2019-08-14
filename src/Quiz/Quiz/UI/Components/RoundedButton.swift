@@ -10,10 +10,11 @@ import Foundation
 import UIKit
 
 class RoundedButton : UIButton {
-    private let kDefaultCornerRadius:CGFloat = 5
+    private let kDefaultCornerRadius:CGFloat = 8
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        setupView()
     }
     
     private func setupView() {

@@ -7,17 +7,29 @@
 //
 
 import Foundation
+import SwiftyJSON
 
-
-class QuizInfo {
-    let durationInMinutes = 5
+class QuizInfo : JSONSerializable {
+   
+    let durationInMinutes = 1
     
+    private(set) var question: String!
+    private(set) var answers:[String]!
+        
+    required init(json: JSON) throws {
+        self.question = try required(json["question"].string)
+        self.answers = try required(json["answer"].array?.map { $0.stringValue })
+    }
     
-    let question: String
-    let answers:[String]
+    init(question:String, answers:[String]) {
+        self.question = question
+        self.answers = answers
+    }
     
-    init() {
-        self.question = "What are all the java keywords?"
-        self.answers = [ "public", "final", "class", "synchronized", "int", "float"]
+    func toJSON() -> JSON {
+        return JSON(dictionaryLiteral:
+            ("question", self.question as String),
+            ("answer", self.answers as [String])
+        )
     }
 }

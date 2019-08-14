@@ -9,14 +9,24 @@
 import Foundation
 
 class QuizManager {
+    
     enum State {
         case Ready, Started, Finished
     }
     
+    /*
+     Current quiz information
+    */
     let quizInfo:QuizInfo
     
+    /*
+      An observer to receive state changes from this QuizManager
+    */
     var observer:QuizManagerObserver?
     
+    /*
+     Current quiz state
+     */
     private(set) var state: State = State.Ready {
         didSet { onQuizStateChanged() }
     }
@@ -43,24 +53,41 @@ class QuizManager {
     }
     
     var timer:Timer?
+    
+    /*
+      Remaining time in seconds for the quiz to end
+    */
     private(set) var remainingTimeInSeconds:Int = 0 {
         didSet { self.observer?.onQuizTimeUpdate(remainingTimeInSeconds: self.remainingTimeInSeconds) }
     }
-
+    /*
+     List of current correct answers
+    */
     var correctGuesses:[String] = []
     
     init(quizInfo:QuizInfo) {
         self.quizInfo = quizInfo
     }
     
+    /*
+     Starts the quiz timer
+    */
     func start() {
         self.state = State.Started
     }
     
+    /*
+     Reset the quiz timer and clear current correct answers
+     */
     func reset() {
         self.state = State.Ready
     }
     
+    /*
+     Checks if the parameter guess is a correct answer
+     - parameters:
+        - answer: value to check if correct
+    */
     func guess(_ answer:String) -> Bool {
         if self.state == State.Started && self.quizInfo.answers.contains(answer) && !self.correctGuesses.contains(answer) {
             self.correctGuesses.insert(answer, at:0)
@@ -70,7 +97,6 @@ class QuizManager {
         }
         return false
     }
-    
     
     private func checkifQuizFinished() {
         // If all answers were guessed, the quiz has finished [AR]
@@ -102,7 +128,7 @@ class QuizManager {
         self.timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(1), repeats: true, block: { [weak self] timer in
             if let self = self {
                 self.remainingTimeInSeconds-=1
-                print("Time update: \(self.remainingTimeInSeconds)")
+                self.checkifQuizFinished()
             }
         })
     }
@@ -114,11 +140,26 @@ class QuizManager {
 }
 
 protocol QuizManagerObserver {
-    
+    /*
+     Called every quiz time update
+     - parameters:
+     - remainingTimeInSeconds: the remaining time in seconds for the quiz to end
+    */
     func onQuizTimeUpdate(remainingTimeInSeconds:Int)
     
+    /*
+     Called every time a new correct guess is added or when the correct guesses is cleared
+     - parameters:
+     - currentCount: The current correct answers in this match
+     - total: The total of answers in the quiz
+     */
     func onQuizCorrectGuessesCountChanged(currentCount: Int, total: Int)
     
+    /*
+     Called every time the quiz state changes
+     - parameters:
+     - state: The current state of the quiz
+     */
     func onQuizStateChanged(state:QuizManager.State)
 }
 
